@@ -42,17 +42,21 @@ const app = ()=> {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-500 to-indigo-600 p-6 text-white">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-radial from-purple-500 to-indigo-600 p-6 text-white">
       <h1 className="text-4xl font-bold mb-6">Countdown Timer</h1>
 
-      <input
-        type="datetime-local"
-        className="text-black p-2 rounded mb-4 shadow"
-        onChange={handleDateChange}
-        value={targetDate}
-      />
-
-      <div className="grid grid-cols-4 gap-4 text-center text-2xl font-semibold mb-6">
+      <div className='gap-2 max-sm:flex max-sm:flex-col'>
+        <label className='mr-2 max-sm:mr-0' htmlFor="date">Specify a future date:</label>
+        <input
+          type="datetime-local"
+          className="text-black p-2 rounded mb-4 shadow"
+          onChange={handleDateChange}
+          value={targetDate}
+          id='date'
+        />
+      </div>
+      
+      <div className="w-[500px] max-sm:w-[300px] flex justify-between text-center text-2xl font-semibold mb-6">
         <div>
           <p>{timeLeft.days}</p>
           <span className="text-sm">Days</span>
